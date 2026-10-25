@@ -311,6 +311,17 @@ footer a:hover { color: var(--aqua); }
 @media (max-width: 650px) {
   .official-page .topbar { min-height: 68px; }
   .official-page .document-card { margin-top: 26px; }
-  .support-page .support-email { grid-template-columns: 1fr auto; }
+  .support-page .support-email {
+    grid-template-columns: minmax(0, 1fr) 1.25rem;
+    column-gap: 12px;
+  }
   .support-page .support-email-label { display: none; }
+  .support-page .support-email > span:nth-child(2) { min-width: 0; }
+  .support-page .support-email strong {
+    overflow-wrap: anywhere;
+    font-size: clamp(0.86rem, 4.1vw, 1rem);
+  }
+  .support-page .support-email .arrow {
+    justify-self: end;
+  }
 }
